@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer base {
+  :root {
+    --foreground: 0 0% 0%; /* Основной текстовый цвет (черный) */
+    --card: 325 60% 80%; /* Фон карточек (розовый) */
+    --card-foreground: 0 0% 0%; /* Текст на карточках (черный) */
+
+    --popover: 325 60% 80%; /* Фон поповера (розовый) */
+    --popover-foreground: 0 0% 0%; /* Текст в поповере (черный) */
+
+    --primary: 325 80% 70%; /* Основной цвет (ярко-розовый) */
+    --primary-foreground: 0 0% 100%; /* Текст на основном фоне (черный) */
+
+    --secondary: 330 60% 98%; /* Второстепенный цвет (более светлый розовый) */
+    --secondary-foreground: 0 0% 0%; /* Текст на второстепенном фоне (черный) */
+
+    --muted: 325 40% 80%; /* Выцветший цвет (более приглушенный розовый) */
+    --muted-foreground: 0 0% 0%; /* Текст на выцветшем фоне (черный) */
+
+    --accent: 325 80% 70%; /* Акцентный цвет (ярко-розовый) */
+    --accent-foreground: 0 0% 0%; /* Текст на акцентном фоне (черный) */
+
+    --destructive: 10 80% 60%; /* Разрушительный цвет (красный) */
+    --destructive-foreground: 0 0% 0%; /* Текст на разрушительном фоне (черный) */
+
+    --border: 325 40% 50%; /* Цвет границ (розовый) */
+    --input: 325 40% 90%; /* Фон инпутов (розовый) */
+    --ring: 325 60% 70%; /* Цвет кольца (розовый) */
+    --radius: 18px; /* Радиус углов */
+  }
+}
+
+
+
+* {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #fff;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #dbdadd;
+  border-radius: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #dbdadd;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-primary-custom {
+    background-color: #c084fc;
+  }
+  
+  .text-primary-custom {
+    color: #fff; /* Вы можете выбрать любой подходящий цвет текста */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+#nprogress .bar {
+  @apply bg-primary !important;
+}
+
+#nprogress .peg {
+  @apply shadow-md shadow-primary !important;
+}
+
+#nprogress .spinner-icon {
+  @apply border-t-primary border-l-primary !important;
+}
