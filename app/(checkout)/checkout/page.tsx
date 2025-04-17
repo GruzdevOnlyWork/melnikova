@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-// import { useSession } from 'next-auth/react';
 import { Api } from '@/shared/services/api-client';
 import toast from 'react-hot-toast';
 import { FormProvider, useForm } from 'react-hook-form';

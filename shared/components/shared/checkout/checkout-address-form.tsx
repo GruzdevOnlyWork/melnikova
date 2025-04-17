@@ -1,3 +1,4 @@
+'use client'
 import { Input, Textarea } from "../../ui";
 import { FormTextarea } from "../form";
 import { WhiteBlock } from "../white-block";
