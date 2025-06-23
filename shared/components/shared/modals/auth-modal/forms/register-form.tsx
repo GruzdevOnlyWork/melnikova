@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import toast from 'react-hot-toast';
 import { TFormRegisterValues, formRegisterSchema } from './schemas';
 import { FormInput } from '../../../form';
-import { Button } from '@/shared/components/ui';
+import { Button, Checkbox } from '@/shared/components/ui';
 import { registerUser } from '@/app/action';
 
 interface Props {
@@ -52,7 +52,8 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         <FormInput name="fullName" label="Полное имя" required />
         <FormInput name="password" label="Пароль" type="password" required />
         <FormInput name="confirmPassword" label="Подтвердите пароль" type="password" required />
-
+        <Checkbox required></Checkbox>
+        <label htmlFor="">Я ознакомлен и согласен с <a href='https://btgp.ru/images/new_site/test_dpl/PersonalData/PersonalData.pdf'>политикой обработки персональных данных</a></label>
         <Button loading={form.formState.isSubmitting} className="h-12 text-base" type="submit">
           Зарегистрироваться
         </Button>
