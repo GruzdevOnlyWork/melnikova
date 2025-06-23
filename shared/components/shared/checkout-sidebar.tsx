@@ -15,8 +15,8 @@ interface Props {
 }
 
 export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, loading, className }) => {
-  const vatPrice = (totalAmount * VAT) / 100;
-  const totalPrice = totalAmount + DELIVERY_PRICE + vatPrice;
+  // const vatPrice = (totalAmount * VAT) / 100;
+  const totalPrice = totalAmount + DELIVERY_PRICE ;
 
   return (
     <WhiteBlock className={cn('p-6 sticky top-4', className)}>
@@ -38,7 +38,7 @@ export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, loading, classNa
         }
         value={loading ? <Skeleton className="h-6 w-16 rounded-[6px]" /> : `${totalAmount} ₽`}
       />
-      <CheckoutItemDetails
+      {/* <CheckoutItemDetails
         title={
           <div className="flex items-center">
             <Percent size={18} className="mr-2 text-gray-400" />
@@ -46,7 +46,7 @@ export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, loading, classNa
           </div>
         }
         value={loading ? <Skeleton className="h-6 w-16 rounded-[6px]" /> : `${vatPrice} ₽`}
-      />
+      /> */}
       <CheckoutItemDetails
         title={
           <div className="flex items-center">
